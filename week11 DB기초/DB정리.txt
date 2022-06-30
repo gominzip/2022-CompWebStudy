@@ -1,0 +1,40 @@
+데이터 베이스
+: 일정한 체계 속에 저장된 데이터의 집합
+데이터
+: Table(표) 단위로 저장 >> 하나의 DB에도 다양한 Table 존재 가능
+* Table : 항상 이름을 가지고 있는 리스트로 데이터가 저장되어있는 공간, 행ROW / 열COLUMN / 값FIELD
+
+DBMS 프로그램
+: 데이터베이스 관리 시스템
+: 사용자 명령 > DB / table / data 생성 및 삭제 / table 조회
+: ex) MySQL, ORACLE, MS SQL Server, MariaDB, SQLite
+: DB 구축의 시작 = DBMS 프로그램 선택
+
+SQL (Structured Query Language)
+: 데이터베이스에서 데이터를 정의, 조작, 제어하기 위해 사용되는 명령어
+
+- 데이터 정의어(DDL) : 데이터 베이스를 생성하거나 테이블을 만드는 언어 
+- 데이터 조작어(DML) : 데이터베이스에 저장된 데이터를 조회하거나 수정, 삭제하는 등의 역할을 하는 언어 
+- 데이터 제어어(DCL) : 사용자의 권한을 설정하는 언어 
+
+data select 방식
+- SELECT(명령) author(검색할 컬럼, *을 입력하면 모든 데이터가 검색)
+  FROM book; (테이블)
+  WHERE title = '돈키호테'; (조건, 비교연산자 사용 가능)
+* 기타연산자
+  - A BETWEEN 10 AND 20 (A가 10과 20 사이에 포함된 값)
+  - A IN B (B에 A가 포함된 값)
+  - A NOT IN B (B에 A가 포함되지 않은 값)
+
+SQL에서의 데이터 종류 
+- int 정수 자료형
+- float 실수 자료형
+- char 문자열 자료형, 공백 추가
+- varchar 문자열 자료형, 공백 추가 x
+- date 년, 월, 일을 저장하는 날짜 자료형
+- datetime 년, 월, 일, 시, 분, 초까지 저장하는 날짜와 시각 자료형
+- time 시간, 분, 초를 저장하는 시간 자료형
+
+ORM
+: 파이썬으로 코딩하면 ORM이 SQL코드를 얻을 수 있게 함 (개발자들이 SQL을 잘 모르는 이유) >> 너무 의존
+

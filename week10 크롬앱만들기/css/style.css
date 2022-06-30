@@ -1,0 +1,109 @@
+html, body{
+    margin : 0;
+    padding : 0;
+    height : 100%;
+}
+body{
+    background-size: cover;
+}
+
+ul{
+    width : fit-content;
+    height : 25px;
+    margin : 0 auto;
+    padding: 35px 0 100px 0 ;
+    color : rgb(255, 255, 255);
+}
+
+#container{
+    width : 600px;
+    height : 800px;
+    margin : 150px auto;
+    border : 4px rgba(255, 255, 255, 0.6) solid;
+    border-radius: 10%;
+}
+
+.hidden{
+    display : none;
+}
+
+#right, #left{
+    margin : 5px;
+    float : left;
+    width : 45%;
+    height : 100%;
+}
+
+#left{
+    margin-left : 30px;
+}
+
+#border{
+    margin : 44px auto;
+    border-radius: 10%;
+    height : 90%;
+    width : 3px;
+    float : left;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#clock{
+    font-size: 75px;
+    width : fit-content;
+    height : 5px;
+    margin : 0 auto;
+    padding: 200px 0 0 0 ;
+    color : rgb(247, 247, 247);
+}
+
+#login-form{
+    width : fit-content;
+    height : 25px;
+    margin : 0 auto;
+    padding: 200px 0 100px 0 ;
+}
+
+#greeting{
+    width : fit-content;
+    height : 25px;
+    margin : 0 auto;
+    padding: 180px 0 120px 0 ;
+}
+
+#greeting{
+    font-size: 100px;
+    color : rgb(247, 247, 247);
+}
+
+#todo-form input{
+    display : block;
+    border-style: none;
+    width : 200px;
+    height : 20px;
+    margin : 0 auto;
+    padding: 100 0 10 0 ;}
+    
+#quote{
+    color : rgb(255, 255, 255);
+    width : fit-content;
+    height : 25px;
+    margin : 0 auto;
+    padding: 30px 0 20px 0 ;
+    font-size: 20px;
+    font-style: oblique;
+}
+#quote p > :last-child{
+    padding-left : 0px;
+}
+
+
+    
+#weather{
+    font-size: 15px;
+    width : fit-content;
+    height : 5px;
+    margin : 0 auto;
+    color : rgb(247, 247, 247);
+}
+
+

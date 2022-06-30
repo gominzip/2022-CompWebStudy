@@ -1,0 +1,255 @@
+*데이터 타입의 종류
+
+1. Number
+1) 정수(Integer) // 1, 2, 3, 4 ...
+2) 소수(Float) // 1.555, 2.545345 ...
+* Number타입은 서로 연산기호를 이용하여 계산할 수 있다.
+
+2. String
+: 처음부터 끝까지 문자(Text)로 구성되어 있다는 의미
+
+"Hello," + " My name is Nico" // Hello, My name is Nico
+* String타입은 ""을 이용하여 입력하고 String타입의 합은 두개를 합
+쳐서 출력한다.
+
+
+# const → 변수 선언을 통해 코드를 간결하게
+
+const a = 10;
+const b = 2;
+
+console.log(a + b);
+console.log(a * b);
+console.log(a / b);
+
+
+# 길이가 긴 변수를 선언할 때 → Camelcase
+
+ex. VeryLongVariableName
+
+cf. Python에서는 very_long_variable_name
+
+
+#변수만들때 let, const, var차이
+let 재선언 금지, 재할당 가능
+const 재선언 금지, 재할당 금지
+var 재선언 가능, 재할당 가능
+
+let a = b;
+let a = c;
+//재선언 금지
+
+let a = b;
+a = c;
+//재할당은 가능
+
+const a = b;
+const a = c;
+//재선언 금지
+
+const a = b;
+a = c;
+//재할당 금지
+
+var a = b;
+var a = c;
+a = d;
+//재선언, 재할당 가능
+
+
+# booleans
+
+1. true =/= "true"
+
+2. false =/= "false"
+
+3. null = 값이 없음
+null =/= undefined
+null =/= false
+
+4. undefined = 값이 정의되지 않음
+
+
+//배열생성
+const days_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+//배열접근방법. 첫번째 인덱스는 0임!!!!
+console.log(days_of_week[0]); //Mon출력
+console.log(days_of_week[1]); //Tue출력
+console.log(days_of_week[6]); //Sun출력
+
+//배열 값 변경
+days_of_week[0] = "월요일" //Mon을 월요일로 변경
+console.log(days_of_week[0] = "월"); //출력과 동시에 변경 가능
+
+
+#object는 property를 가진 데이터를 저장해주며, { } 를 사용한다.
+
+const player = {
+name : tomato,
+color : red,
+food : true,
+};
+
+console.log(player);
+
+property를 불러오는 방법은 2가지가 있다.
+
+1. console.log(player.name); => tomato
+2. console.log(player["name"]); => tomato
+
+또한 property를 바꾸는 것은 가능하지만 선언된 object를 바꾸는 것은 불가능하다.
+ex)
+const player = {
+name : tomato,
+color : red,
+food : true,
+};
+
+console.log(player);
+player.color = "blue";
+console.log(player.color);
+--> blue
+
+그리고 property를 추가 할 수도 있다.
+
+player.koreanName = "토마토";
+
+--> {name: "tomato", color: "blue", food: true, koreaName: "토마토"}
+
+
+#player.points(); 라고 사용하지 않았다. player.points은 function이 아니기 때문. player.points은 숫자다.
+player에게 function을 주기 전에, 어떻게 function을 만드는지를 배워야 한다.
+function은 내가 계속 반복해서 사용할 수 있는 코드 조각이다. 어떤 코드를 캡슐화 해서 실행을 여러번 할 수 있게 해준다.
+
+function 선언 :
+function 함수명() {
+실행코드
+}
+
+funtion 실행 : 함수명();
+argument(인수)를 보내야 하는데 인수란 함수를 실행하는 동안 어떤 정보를 함수에게 보낼 수 있는 방법이다
+
+
+#펑션의 괄호 안의 매개변수에서 아규먼트를 받아들일 수 있다.
+ex)
+function sayHello(nameOfPerson) {
+console.log(nameOfPerson);
+}
+
+sayHello("nico")
+sayHello("dal")
+sayHello("lynn") // nameOfPerson은 "nico" "dal" "lynn" 을 받았다고 생각하면 됨.
+
+
+아규먼트는 하나만 받을 수 있는게 아니라 여러개를 받을 수 있음.
+ex)
+function sayHello(nameOfPerson , age) {
+console.log(nameOfPerson);
+}
+
+sayHello("nico" , 12);
+sayHello("dal" , 20);
+sayHello("lynn" , 23); // sayHello function의 매개변수 2개는 아래 2개의 argument를 받는 중임.
+
+function의 값은 function 안에서만 존재한다.
+
+오브젝트 안에서 매개변수가 아규먼트를 받는 방식
+ex)
+const player = {
+name : function(Name) {
+console.log("Your Name is " + Name + " 입니다.")
+} ,
+sayHello : function(Age) {
+console.log("Your age is " + Age + " 입니다." )
+}
+}
+
+player.sayHello(14)
+player.name("james")
+
+
+#let과 const의 차이는 let은 업데이트를 할 수 있다는 것이다. let을 업데이트 할 땐 다시 let을 붙이지 않아도 됨.
+ex) 기존 변수의 값을 업뎃하고 싶은 경우
+let a = 5; // 기존의 값이 5인 상태
+a = 10; // let을 생략하고 10으로 업데이트했음.
+
+코드를 읽으면서 의미를 부여하기 위해 항상 const, 가끔 let ,사용하지 말아야할 var.
+
+boolean은 딱 두 가지 옵션만 있다. ture, false.
+
+null은 아예 '비어있음을 정의'해버리는것, undefinde는 변수에 값을 부여하지 않은 상태.
+
+array 만들기
+ex)
+const days = [1, 2, "안녕하세요" , 'abc' , false , null]
+호출시에는 ? console.log(days[2]) // 인덱스 2번인 "안녕하세요"가 로그에 출력될 예정
+
+array에 무언갈 업데이트 하고 싶을 때에 직접 변경하기.
+ex)
+days[2] = "water" // 데이라는 변수의 오브젝트 인덱스 2번인 "안녕하세요"를 "water"로 교체한다는 뜻.
+
+.push() 로는 추가를 할 수 있음.
+ex)
+days.push('생선') // days라는 변수에 '생선'이라는 string 값을 추가해준것.
+
+const의 object 값을 변경하는 행위는 const 자체를 변경하는 것이 아니고 objects값을 변경하는 것이기 때문에 재할당 오류와 관계없다.
+
+//3.2
+원하는 값을 불러오는 방법에는 여러가지 있다.
+
+getElementById >> 하나의 값
+getElementsByClassName >> 배열
+getElementsByTagName . . . >> 배열
+
+위에서 id 빼고는 배열을 가져오기 때문에 title.innerText 와 같은 방법은 사용할 수 없다.
+또
+Grab me3
+처럼 Id를 가진 태그의 하위 태그를 선택하고 싶을 때 위의 방법으로는 한계가 있다.
+이때 사용하는 게 querySelector/querySelectorAll
+
+const title = document.querySelector(".hellos h1"); 와 같이 쓰면
+.hellos h1 마치 css 선택자 처럼 원하는 요소를 선택 가능
+console.log((title.innerText = "히힛")); 화면에 글자가 히힛으로 바뀐다
+
+** 단 hello라는 class를 가진 h1태그가 여러개인 경우 querySelectorAll을 써야 한다.
+선택자가 id인 경우엔 #hello
+만약 요소를 특정하지 않고 선택자만 쓰는 경우
+>> const title = document.querySelector(".hellos");
+
+
+Grab me3
+
+hello
+
+라고 써도 grab me3와 hello 모두 선택됨
+그리고 여기서 만약 업데이트를 하면
+>>console.log((title.innerText = "히힛"));
+>> 결과는 grab me3, hello 둘 다 사라지고 히힛으로 대체된다.
+
+
+//3.3
+- 지금 js파일이 있기 때문에 js를 통해 html의 내용을 가져올 수 있는 거임
+- document가 html이 js파일을 load하기 때문에 존재 → 그 다음에 browser가 우리가 document에 접근할 수 있게 해줌
+- element의 내부를 보고 싶으면 console.dir()
+기본적으로 object로 표시한 element를 보여줌(전부 js object임)
+그 element 중 앞에 on이 붙은 것들은 event임
+- event: 어떤 행위를 하는 것
+모든 event는 js가 listen할 수 있음
+- eventListener : event를 listen함 → js에게 무슨 event를 listen하고 싶은 지 알려줘야 함
+- title.addEventListener("click") : 누군가가 title을 click하는 것을 listen할 거임 → 무언가를 해줘야함
+
+const title = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick(){
+title.style.color = "blue";
+}
+title.addEventListener("click",handleTitleClick);
+//click하면 handleTitleClick이라는 function이 동작하길 원함
+//그래서 handle~ 함수에 () 를 안넣은 것임
+//즉, js가 대신 실행시켜주길 바라는 것임!
+
+- function이 js에게 넘겨주고 유저가 title을 click할 경우에 js가 실행버튼을 대신 눌러주길 바라는 것임( 직접 handleTitleClick(); 이렇게 하는 것이 아니라)
+- 함수에서 () 이 두 괄호를 추가함으로써 실행버튼을 누를 수 있는 거임
+
+//3.4
